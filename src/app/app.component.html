@@ -22,9 +22,9 @@
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="#">Vinyl</a></li>
-                <li><a class="dropdown-item" href="#">Gear</a></li>
-                <li><a class="dropdown-item" href="#">About</a></li>
-                <li><a class="dropdown-item" href="#">Contact</a></li>
+                <li><a class="dropdown-item" href="#" routerLink="gear">Gear</a></li>
+                <li><a class="dropdown-item" href="#" routerLink="about">About</a></li>
+                <li><a class="dropdown-item" href="#" routerLink="contact">Contact</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown">
@@ -44,8 +44,8 @@
                   Gear
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">DJ-Gear</a></li>
-                  <li><a class="dropdown-item" href="#">Accessories</a></li>
+                  <li><a class="dropdown-item" href="#" routerLink="gear">DJ-Gear</a></li>
+                  <li><a class="dropdown-item" href="#" routerLink="accessories">Accessories</a></li>
                 </ul>
               </li>
             <li class="nav-item dropdown">
@@ -54,9 +54,8 @@
                 About
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">About</a></li>
-                <li><a class="dropdown-item" href="#">Discography</a></li>
-                <li><a class="dropdown-item" href="#">Our Friends</a></li>
+                <li><a class="dropdown-item" routerLink="about">The SHOP</a></li>
+                <li><a class="dropdown-item" routerLink="discography">Discography</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown">
@@ -65,13 +64,12 @@
                   Login/Register
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Login</a></li>
-                  <li><a class="dropdown-item" href="#">Register</a></li>
-
+                  <li><a class="dropdown-item" routerLink="/login">Login</a></li>
+                  <li><a class="dropdown-item" routerLink="/register">Register</a></li>
               </ul>
               </li>
             <li class="nav-item">
-              <a class="nav-link fw-semibold text-uppercase text-black  me-1" href="#">Contact</a>
+              <a class="nav-link fw-semibold text-uppercase text-black  me-1" routerLink="contact">Contact</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">
@@ -82,8 +80,8 @@
               <a class="nav-link dropdown-toggle cart fw-semibold text-uppercase text-black  me-1" href="#"
                 id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="fa fa-shopping-basket fs-5" style="color: #202122;"></i>
-                <span class="position-absolute  translate-middle badge rounded-pill bg-danger">
-                <!-- {{cartProducts.length}}-->
+                <span class="position-absolute  translate-middle badge rounded-pill bg-NOT-Danger">
+                {{cartProducts.length}}
                   <span class="visually-hidden">unread messages</span>
                 </span>
               </a>
@@ -97,7 +95,7 @@
                       Remove All
                     </div>
                   </div>
-                  <!--<div class="row pt-1" *ngFor="let cart of cartProducts"> 
+                  <div class="row pt-1" *ngFor="let cart of cartProducts"> 
                     <div class="col-4">
                       <img class="img-fluid" style="height: 30px;border-radius: 50%;" [src]="cart.productImageUrl" class="card-img-top">
                     </div>
@@ -110,7 +108,7 @@
                     <div class="col-2 text-end">
                      {{ cart.productPrice}}
                     </div>
-                  </div>-->
+                  </div>
                  
                   <div class="row">
                     <div class="col-3">
@@ -133,10 +131,10 @@
                       <div> <small> 2 items</small></div>
                     </div>
                     <div class="col-4 text-end">
-                      <!--<strong> ${{subTotal}}</strong>-->
+                      <strong> ${{subTotal}}</strong>
                     </div>
                   </div>
-                  <div class="row">
+                  <div class="">
                     <div class="col-12 text-end">
                       <!--<button class="btn btn-sm btn-success" (click)="redirectToSale()">Checkout</button>-->
                     </div>
@@ -153,4 +151,9 @@
     <div class="container">
       <router-outlet></router-outlet>
     </div>
+    <footer>
+      <div class="col-6 text-end">  
+          <img src="assets\Admin.png" style="width: 50px; height: 50px;margin-left: 20px;" routerLink="add-product">          
+      </div>
+    </footer>
   </section>

@@ -38,3 +38,6 @@ a:hover {
     width: 300px;
     padding: 5px;
 }
+.bg-NOT-Danger{
+    background-color: rgb(24, 139, 192);
+}
