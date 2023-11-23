@@ -48,8 +48,30 @@
           </div>
           <br/>
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="email" id="sample3">
-            <label class="mdl-textfield__label" for="sample3">- Category</label>
+            <select id="category" class="mdl-textfield__input">
+              <option>Choose Category</option>
+              <option value="HOUSE">House</option>
+              <option value="DEEP_HOUSE">Deep House</option>
+              <option value="TECH_HOUSE">Tech House</option>
+              <option value="PROGRESSIVE_HOUSE">Progressive House</option>
+              <option value="ELECTRO_HOUSE">Electro House</option>
+              <option value="TECHNO">Techno</option>
+              <option value="DETROIT_TECHNO">Detroit Techno</option>
+              <option value="MINIMAL_TECHNO">Minimal Techno</option>
+              <option value="ACID_TECHNO">Acid Techno</option>
+              <option value="DRUM_AND_BASS">Drum and Bass</option>
+              <option value="TRANCE">Trance</option>
+              <option value="PROGRESSIVE_TRANCE">Progressive Trance</option>
+              <option value="DRUM_AND_BASS">Drum and Bass</option>
+              <option value="JUNGLE">Jungle</option>
+              <option value="NU_SKOOL_BREAKS">Nu Skool Breaks</option>
+              <option value="BIG_BEAT">Big Beat</option>
+              <option value="DUBSTEP">Dubstep</option>
+              <option value="HARDCORE">Hardcore</option>
+              <option value="AMBIENT">Ambient</option>
+              <option value="EXPERIMENTAL">Experimental</option>
+            </select>
+            <label class="mdl-textfield__label" for="category">- Category</label>
           </div>
           <br/>
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -58,41 +80,73 @@
           </div>
           <br/>
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="email" id="sample3">
-            <label class="mdl-textfield__label" for="sample3">- Format</label>
+            <select id="format" class="mdl-textfield__input">
+              <option>Choose a format</option>  
+              <option value="TWELVE_INCH">12 Inch</option>
+              <option value="LP">LP</option>
+                <option value="MAXI">MAXI</option>
+                <option value="SEVEN_INCH">7 Inch</option>
+                <option value="TEN_INCH">10 Inch</option>
+                <option value="FLEXI_DISK">FLEXI DISK</option>
+            </select>
+            <label class="mdl-textfield__label" for="format">- Format</label>
+        </div>
+        <br/>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="bestSeller">
+            <span class="mdl-switch__label">Best Seller -</span>
+            <input type="checkbox" id="bestSeller" class="mdl-switch__input" name="bestSeller">
+          </label>
+        </div>
+        <br/>
+        <div class="tracklist-container">
+          <label class="mdl-textfield__label" for="tracklist">TRACKLIST</label>
+          <div id="tracklist-section">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label track-item">
+              <input class="mdl-textfield__input" type="text" name="track[]" required>
+              <label class="mdl-textfield__label" for="tracklist">- Add Track Song(s)</label>
+            </div>
           </div>
-          <br/>
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="email" id="sample3">
-            <label class="mdl-textfield__label" for="sample3">- Best Seller</label>
-          </div>
-          <br/>
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="email" id="sample3">
-            <label class="mdl-textfield__label" for="sample3">- tracklist</label>
-          </div>
-          <br/>
+          <button class="add-track-btn mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--raised mdl-button--colored">
+            Add Track
+          </button>
+        </div>
+        <br/>
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <input class="mdl-textfield__input" type="email" id="sample3">
             <label class="mdl-textfield__label" for="sample3">- Price</label>
           </div>
           <br/>
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="email" id="sample3">
-            <label class="mdl-textfield__label" for="sample3">- Status</label>
-          </div>
-          <br/>
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="email" id="sample3">
-            <label class="mdl-textfield__label" for="sample3">- Quantity</label>
-          </div>
-          <br/>
+            <select id="status" class="mdl-textfield__input">
+                <option value="IN STOCK">IN STOCK</option>
+                <option value="OUT OF STOCK">OUT OF STOCK</option>
+                <option value="PENDING">PENDING</option>
+            </select>
+            <label class="mdl-textfield__label" for="status">- Status</label>
+        </div>
+        <br/>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <select id="category" class="mdl-textfield__input">
+            <option>Choose QT</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+          <label class="mdl-textfield__label" for="quantity">- Quantity</label>
+        </div>
+        <br/>
           </form>
       </div><!--/.form-section-->
-      
       <button class="sign-in-btn mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--raised mdl-button--colored">
         Add to stock
       </button><!--/button-->
    </div><!--/.signin-->
   </body>
-

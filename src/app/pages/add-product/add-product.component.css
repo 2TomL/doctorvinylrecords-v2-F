@@ -81,3 +81,6 @@
     border-radius: 0px;
     background-color: #0a0a0a69;
   }
+  .mdl-switch__input {
+    transform: scale(1.5); /* Adjust the scale factor as needed */
+    }
