@@ -1,0 +1,64 @@
+.about-pic{
+    height: 400px;
+}
+section {
+    display: flex;
+    flex-direction: column;
+    padding-top: 4vh;
+    height: 96vh;
+    box-sizing: border-box;
+    min-height: fit-content;
+  }
+  
+  .section-container {
+    display: flex;
+  }
+  .section__pic-container {
+    display: flex;
+    height: 400px;
+    width: 100%;
+    margin-top: 1.2cm;
+    margin-bottom: 1rem;
+  }
+  .about-pic {
+    border-radius: 0.5rem;
+    box-shadow: 0px 3px 12px -1px #000;
+  }
+  .text-container{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 12cm;
+  }
+  .title{
+    display: flex;
+    position: relative;
+  }
+  .map{
+    position: relative;
+    border-radius: 0.5rem;
+    box-shadow: 0px 3px 12px -1px #000;
+
+    margin-top: 3rem;
+  }
+  .time-container{
+    position: relative;
+    margin-bottom: 5rem;
+  }
+.time{
+  box-sizing: border-box;
+  position: relative;
+  flex-direction: column;
+}
+.logo.box{
+  height: 5rem;
+  width: 5rem;
+  display: flex;
+  size:5rem;
+}
+.logo.bar{
+  height: 5rem;
+  width: 5rem;
+  display: flex;
+  size:5rem;
+}
