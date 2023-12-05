@@ -50,15 +50,14 @@ section {
   position: relative;
   flex-direction: column;
 }
-.logo.box{
-  height: 5rem;
-  width: 5rem;
-  display: flex;
-  size:5rem;
+.logo-box{
+  max-height: 2cm;
+  width: fit-content;
+  margin: 0.5cm;
+  display: inline;
 }
 .logo.bar{
   height: 5rem;
-  width: 5rem;
   display: flex;
   size:5rem;
 }
