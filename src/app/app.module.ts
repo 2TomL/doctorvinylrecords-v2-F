@@ -9,14 +9,13 @@ import { SaleComponent } from './pages/sale/sale.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './pages/login/login.component';
-import { RegisterComponent } from './pages/register/register.component';
+import { RegisterComponent } from './pages/registration/registration.component';
 import { AboutComponent } from './pages/about/about.component';
 import { DiscographyComponent } from './pages/discography/discography.component';
 import { AccessoriesComponent } from './pages/accessories/accessories.component';
 import { GearComponent } from './pages/gear/gear.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { AddProductComponent } from './pages/add-product/add-product.component';
-
 
 @NgModule({
   declarations: [
@@ -31,15 +30,10 @@ import { AddProductComponent } from './pages/add-product/add-product.component';
     AccessoriesComponent,
     GearComponent,
     ContactComponent,
-    AddProductComponent
+    AddProductComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
