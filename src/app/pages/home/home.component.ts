@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { jwtDecode } from 'jwt-decode';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({

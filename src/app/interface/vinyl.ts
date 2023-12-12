@@ -4,6 +4,7 @@ import { Status } from "./Status";
 import { Track } from "./Track";
 
 export interface vinyl {
+    imageFile: any,
     vinylId: number;
     artist: string;
     title: string;

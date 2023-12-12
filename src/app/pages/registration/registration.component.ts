@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import axios from 'axios';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { AuthService } from '../../security/auth.service';
 
@@ -12,10 +12,11 @@ export class RegisterComponent {
   username: string = '';
   password: string = '';
   email: string = '';
-  constructor(private router: Router, private authService: AuthService){
+  constructor(private router: Router, private authService: AuthService, private httpClient: HttpClient){
 
   }
  register() {
+  const url = 'http://localhost:8080//api/auth/register'
     // Create a request object
     const loginRequest = {
       username: this.username,
@@ -24,20 +25,9 @@ export class RegisterComponent {
     };
 
     // Make a POST request to the register endpoint
-    axios.post('http://localhost:4200/api/auth/registration', loginRequest, {
-      headers: {
-        'Content-Type': 'application/json' 
-      }
-    }).then(response => {  
-      console.log('Registration successful:', response);
-
-      alert('Registration successful, please login');
-
-      this.router.navigate(['/login']);
-
-    }).catch(error => {
-      console.error('Registration error:', error);
-      alert('Registration failed, check the console for details');
-    });
+    this.httpClient.post(url, loginRequest ).subscribe({
+      next:response => {console.log('Registration okay')},
+      error: (error: HttpErrorResponse) => {console.log(error.error)}
+      })
   }
 }

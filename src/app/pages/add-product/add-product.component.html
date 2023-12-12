@@ -20,6 +20,7 @@
           accept="Image/*"
           style="margin-top: 10px"
           (change)="addFile($event)"
+          [(ngModel)]="Vinyl.imageFile"
         />
           </div>
           
@@ -159,7 +160,7 @@
         <br/>
           </form>
       </div><!--/.form-section-->
-      <button class="sign-in-btn mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--raised mdl-button--colored">
+      <button class="sign-in-btn mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--raised mdl-button--colored" (click)="addProduct">
         Add to stock
       </button><!--/button-->
    </div><!--/.signin-->

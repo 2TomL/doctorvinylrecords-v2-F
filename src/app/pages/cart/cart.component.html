@@ -1,1 +1,49 @@
-<p>cart works!</p>
+<div class="container">
+    <div *ngIf="cartProducts.length === 0">
+      <p>Your cart is empty.</p>
+    </div>
+    <div *ngFor="let cartProduct of cartProducts">
+      <div class="row">
+        <div class="col-4">
+          <img [src]="cartProduct.productImageUrl" alt="Product Image" class="img-fluid" style="height: 30px; border-radius: 50%">
+        </div>
+        <div class="col-3">
+          {{ cartProduct.productName }}
+        </div>
+        <div class="col-2">
+          {{ cartProduct.quantity }}
+        </div>
+        <div class="col-2 text-end">
+          {{ cartProduct.productPrice }}
+        </div>
+        <div class="col-1">
+          <button class="btn btn-danger btn-sm" (click)="removeFromCart(cartProduct)">Remove</button>
+        </div>
+      </div>
+      <hr>
+    </div>
+    <div *ngIf="cartProducts.length > 0">
+      <div class="row">
+        <div class="col-6"></div>
+        <div class="col-6 text-end text-danger">
+          <button class="btn btn-link" (click)="clearCart()">Clear Cart</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3"></div>
+        <div class="col-2"></div>
+        <div class="col-4">
+          <div class="Subtotal">Sub-Total</div>
+          <div><small>{{ cartProducts.length }} items</small></div>
+        </div>
+        <div class="col-3 text-end">
+          <strong> €{{ subTotal }}</strong>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 text-end">
+          <!--<button class="btn btn-sm btn-success" (click)="redirectToSale()">Checkout</button>-->
+        </div>
+      </div>
+    </div>
+  </div>

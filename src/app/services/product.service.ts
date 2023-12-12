@@ -10,22 +10,22 @@ export class ProductService {
   constructor(private http: HttpClient) { }
   getAllProducts(): Observable<any[]> {
     debugger;
-    return this.http.get<any[]>("http://onlinetestapi.gerasim.in/api/Ecomm/GetAllProducts");
+    return this.http.get<any[]>("");
   }
   addToCart(obj: any) : Observable<any> {
     debugger;
-    return this.http.post<any>("http://onlinetestapi.gerasim.in/api/Ecomm/AddToCart",obj);
+    return this.http.post<any>("",obj);
   }
 
   getCartItemsByCustId(custId: number) : Observable<any[]>  {
-    return this.http.get<any[]>("http://onlinetestapi.gerasim.in/api/Ecomm/GetCartProductsByCustomerId?id=" + custId);
+    return this.http.get<any[]>("" + custId);
   }
    removeCartItemById(cartId: number) : Observable<any[]>  {
-    return this.http.get<any[]>("http://onlinetestapi.gerasim.in/api/Ecomm/DeleteProductFromCartById?id=" + cartId);
+    return this.http.get<any[]>("" + cartId);
   }
 
   makeSale(obj: any) : Observable<any> {
     debugger;
-    return this.http.post<any>("http://onlinetestapi.gerasim.in/api/Ecomm/AddNewSale",obj);
+    return this.http.post<any>("",obj);
   }
 }

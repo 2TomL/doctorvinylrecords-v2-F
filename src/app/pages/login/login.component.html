@@ -22,7 +22,7 @@
           <br/>
           <!--Password-->
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input pattern=".{8,}" class="mdl-textfield__input" type="password" id="sample3">
+            <input pattern=".{8,}" class="mdl-textfield__input" type="password" id="sample3"[(ngModel)]="loginObj.password">
             <label class="mdl-textfield__label" for="sample3">- Password</label>
           </div>
           <br/>
@@ -32,7 +32,7 @@
         </form>
       </div><!--/.form-section-->
       
-      <button class="sign-in-btn mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--raised mdl-button--colored">
+      <button class="sign-in-btn mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--raised mdl-button--colored" (click)="login">
         Sign In
       </button><!--/button-->
    </div><!--/.signin-->
