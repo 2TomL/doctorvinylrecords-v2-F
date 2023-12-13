@@ -15,8 +15,13 @@ export class RegisterComponent {
   constructor(private router: Router, private authService: AuthService, private httpClient: HttpClient){
 
   }
+    passwordVerification : String = "";
+  
  register() {
-  const url = 'http://localhost:8080//api/auth/register'
+  if (this.password !== this.passwordVerification ){
+    return
+  }
+  const url = 'http://localhost:8080/api/auth/register'
     // Create a request object
     const loginRequest = {
       username: this.username,
@@ -24,10 +29,12 @@ export class RegisterComponent {
       email: this.email
     };
 
+    console.log(loginRequest)
+
     // Make a POST request to the register endpoint
     this.httpClient.post(url, loginRequest ).subscribe({
-      next:response => {console.log('Registration okay')},
+      next:response => {console.log(response)},
       error: (error: HttpErrorResponse) => {console.log(error.error)}
-      })
+      })  
   }
 }

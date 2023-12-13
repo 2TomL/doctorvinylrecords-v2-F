@@ -16,6 +16,7 @@ import { AccessoriesComponent } from './pages/accessories/accessories.component'
 import { GearComponent } from './pages/gear/gear.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { AddProductComponent } from './pages/add-product/add-product.component';
+import { TrackComponent } from './pages/track/track.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { AddProductComponent } from './pages/add-product/add-product.component';
     GearComponent,
     ContactComponent,
     AddProductComponent,
+    TrackComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],

@@ -5,6 +5,7 @@ import { Format } from 'src/app/interface/Format';
 import { Status } from 'src/app/interface/Status';
 import { vinyl } from 'src/app/interface/vinyl';
 import { HttpClient } from '@angular/common/http';
+import { Track } from 'src/app/interface/Track';
 
 @Component({
   selector: 'app-add-product',
@@ -47,4 +48,11 @@ export class AddProductComponent {
         error: (error: HttpErrorResponse) => {console.log(error.error)}
         })
     }
+    // addTrack(): void {
+    //   const newTrack: Track = { trackId: '', title: '', videoLink: '' };
+    //   this.Vinyl.trackList.push(newTrack);
+    // }
+    // removeTrack(index: number) {
+    //   this.Vinyl.trackList.splice(index, 1);
+    // }
 }

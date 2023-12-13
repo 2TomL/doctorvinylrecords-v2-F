@@ -1,7 +1,6 @@
 <body>
     <div class="signin">
       <div class="back-img" >
-  
         <div class="sign-in-text">
           <h2 class="active">Login</h2>
           <h2 class="nonactive">Register</h2>
@@ -11,40 +10,42 @@
         <p class="point">&#9650;</p>
       </div><!--/.back-img-->
       <div class="form-section">
-       
-        <form action="#">
+        <form (ngSubmit)="register()">
           <!-- Username -->
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="userName" id="sample3">
-            <label class="mdl-textfield__label" for="sample3">- Choose your user name</label>
+            <input class="mdl-textfield__input" type="text" id="sample3" name="username" [(ngModel)]="username">
+            <label class="mdl-textfield__label" for="sample3">- Choose your username</label>
           </div>
           <br/>
-          <!--  -->  
-          <!--Email-->
+        
+          <!-- Email -->
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="email" id="sample3">
+            <input class="mdl-textfield__input" type="email" id="sample3" name="email" [(ngModel)]="email">
             <label class="mdl-textfield__label" for="sample3">- Email</label>
           </div>
           <br/>
-          <!--Password-->
+        
+          <!-- Password -->
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input pattern=".{8,}" class="mdl-textfield__input" type="password" id="sample3">
+            <input pattern=".{8,}" class="mdl-textfield__input" type="password" id="sample3" name="password" [(ngModel)]="password">
             <label class="mdl-textfield__label" for="sample3">- Password</label>
           </div>
           <br/>
-          <!--Password-check-->
+        
+          <!-- Password-check -->
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input pattern=".{8,}" class="mdl-textfield__input" type="password" id="sample3">
+            <input pattern=".{8,}" class="mdl-textfield__input" type="password" id="sample3" name="passwordVerification" [(ngModel)]="passwordVerification">
             <label class="mdl-textfield__label" for="sample3">- Password verification</label>
-            </div>
-          <br/>
+          </div>
+        
           <span class="forgot-text">Minimum 8 characters</span>
-          <p class="forgot-text">Forgot Password ?</p>
+          <p class="forgot-text">Forgot Password?</p>
           <p class="forgot-text2">Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our privacy policy.</p>
         </form>
+        
       </div><!--/.form-section-->
       
-      <button class="sign-in-btn mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--raised mdl-button--colored" (click)="register">
+      <button class="sign-in-btn mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--raised mdl-button--colored" (click)="register()">
         Register
       </button><!--/button-->
    </div><!--/.signin-->
