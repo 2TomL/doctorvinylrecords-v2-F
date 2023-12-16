@@ -27,7 +27,7 @@ export class VinylService {
   }
 
   async getAllVinyls(): Promise<any> {
-    const url = 'http://localhost:8080/api/vinyl';
+    const url = 'http://localhost:8080/api/vinyl/getvinyls';
 
     try {
       if (!this.getToken()) {

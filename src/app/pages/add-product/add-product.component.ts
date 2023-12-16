@@ -41,8 +41,7 @@ export class AddProductComponent {
     }
   }
   addProduct() {
-    const url = 'http://localhost:8080//api/auth/vinyl'
-      // Make a POST request to the register endpoint
+    const url = 'http://localhost:8080//api/vinyl/add'
       this.httpClient.post(url,  this.Vinyl ).subscribe({
         next:response => {console.log('Saved okay')},
         error: (error: HttpErrorResponse) => {console.log(error.error)}
