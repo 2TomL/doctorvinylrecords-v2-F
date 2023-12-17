@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit{
     
         // Make a POST request to the register endpoint
         this.httpClient.post(url, loginRequest ).subscribe({
-          next:response => {console.log('Registration okay')},
+          next:response => {console.log('Registration okay', response)},
           error: (error: HttpErrorResponse) => {console.log(error.error)}
           })
           

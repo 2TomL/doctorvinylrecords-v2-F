@@ -1,12 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Product</title>
+  <!-- Add any necessary CSS or script references here -->
+</head>
 <body>
   <div class="signin">
-    <div class="back-img" >
-
+    <div class="back-img">
       <div class="sign-in-text">
         <h2 class="active">Add Product</h2>
       </div><!--/.sign-in-text-->
-      <div class="blackbackground">
-      </div><!--/.blackbackground-->
+      <div class="blackbackground"></div><!--/.blackbackground-->
       <p class="point">&#9650;</p>
     </div><!--/.back-img-->
     <div class="form-section">
@@ -14,54 +21,43 @@
         <!-- Add picture -->
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
           <label for="">Image - </label>
-      <input
-        type="file"
-        name="img"
-        accept="Image/*"
-        style="margin-top: 10px"
-        (change)="addFile($event)"
-        [(ngModel)]="Vinyl.imageFile"
-      />
+          <input
+            type="file"
+            name="img"
+            accept="Image/*"
+            style="margin-top: 10px"
+            (change)="addFile($event)"
+            [(ngModel)]="Vinyl.imageFile"
+          />
         </div>
-       
         <br/>
-        <!-- Username -->
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="artist" id="sample3" name="artist">
+          <input class="mdl-textfield__input" type="artist" id="sample3" name="artist" ngModel="artist">
           <label class="mdl-textfield__label" for="sample3">- Artist</label>
         </div>
         <br/>
-        <!--  -->  
-        <!--Email-->
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="label" id="sample3">
+          <input class="mdl-textfield__input" type="title" id="sample3" name="title" ngModel="title">
           <label class="mdl-textfield__label" for="sample3">- Title</label>
         </div>
         <br/>
-        <!-- Name -->
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="email" id="sample3">
-          <label class="mdl-textfield__label" for="sample3">- Label</label>
-        </div>
-        <br/>
-        <!-- Fam name -->
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="email" id="sample3">
+          <input class="mdl-textfield__input" type="catalogNr" id="sample3" name="catalogNr" ngModel="catalogNr">
           <label class="mdl-textfield__label" for="sample3">- Cat. Nr</label>
         </div>
         <br/>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="email" id="sample3">
+          <input class="mdl-textfield__input" type="label" id="sample3" name="label" ngModel="label">
           <label class="mdl-textfield__label" for="sample3">- Label</label>
         </div>
         <br/>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="email" id="sample3">
+          <input class="mdl-textfield__input" type="country" id="sample3" name="country" ngModel="country">
           <label class="mdl-textfield__label" for="sample3">- Country</label>
         </div>
         <br/>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <select id="category" class="mdl-textfield__input">
+          <select id="category" class="mdl-textfield__input" name="category">
             <option>Choose Category</option>
             <option value="HOUSE">House</option>
             <option value="DEEP_HOUSE">Deep House</option>
@@ -88,62 +84,60 @@
         </div>
         <br/>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="email" id="sample3">
+          <input class="mdl-textfield__input" type="released" id="sample3" name="released" ngModel="released">
           <label class="mdl-textfield__label" for="sample3">- Released</label>
         </div>
         <br/>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <select id="format" class="mdl-textfield__input">
-            <option>Choose a format</option>  
+          <select id="format" class="mdl-textfield__input" name="format">
+            <option>Choose a format</option>
             <option value="TWELVE_INCH">12 Inch</option>
             <option value="LP">LP</option>
               <option value="MAXI">MAXI</option>
               <option value="SEVEN_INCH">7 Inch</option>
               <option value="TEN_INCH">10 Inch</option>
               <option value="FLEXI_DISK">FLEXI DISK</option>
-          </select>
-          <label class="mdl-textfield__label" for="format">- Format</label>
-      </div>
-      <br/>
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="bestSeller">
-          <span class="mdl-switch__label">Best Seller -</span>
-          <input type="checkbox" id="bestSeller" class="mdl-switch__input" name="bestSeller">
-        </label>
-      </div>
-      <br/>
-      <div class="tracklist-container">
-        <label class="mdl-textfield__label" for="tracklist">TRACKLIST</label>
-        <div id="tracklist-section">
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label track-item">
-            <input class="mdl-textfield__input" type="text" name="track[]" required>
-            <label class="mdl-textfield__label" for="tracklist">- Add Track Song(s)</label>
+            </select>
+            <label class="mdl-textfield__label" for="format">- Format</label>
           </div>
-        </div>
-       
-
-        <button class="add-track-btn mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--raised mdl-button--colored">
-          Next Track
-        </button>
-      </div>
-      <br/>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="email" id="sample3">
-          <label class="mdl-textfield__label" for="sample3">- Price</label>
-        </div>
-        <br/>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <select id="status" class="mdl-textfield__input">
+          <br/>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="bestSeller">
+              <span class="mdl-switch__label">Best Seller -</span>
+              <input type="checkbox" id="bestSeller" class="mdl-switch__input" name="bestSeller" ngModel="bestSeller">
+            </label>
+          </div>
+          <br/>
+          <!-- <div class="tracklist-container">
+            <label class="mdl-textfield__label" for="tracklist">TRACKLIST</label>
+            <div id="tracklist-section">
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label track-item">
+                <input class="mdl-textfield__input" type="text" name="track[]" required>
+                <label class="mdl-textfield__label" for="tracklist">- Add Track Song(s)</label>
+              </div>
+            </div>
+            <button class="add-track-btn mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--raised mdl-button--colored">
+              Next Track
+            </button>
+          </div>
+          <br/> -->
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="price" id="sample3" name="price" ngModel="price">
+            <label class="mdl-textfield__label" for="sample3">- Price</label>
+          </div>
+          <br/>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <select id="status" class="mdl-textfield__input" name="status">
               <option value="IN STOCK">IN STOCK</option>
               <option value="OUT OF STOCK">OUT OF STOCK</option>
               <option value="PENDING">PENDING</option>
-          </select>
-          <label class="mdl-textfield__label" for="status">- Status</label>
-      </div>
-      <br/>
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <select id="category" class="mdl-textfield__input">
-          <option>Choose QT</option>
+            </select>
+            <label class="mdl-textfield__label" for="status">- Status</label>
+          </div>
+          <br/>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <select id="quantity" class="mdl-textfield__input" name="quantity">
+              <option>Choose QT</option>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -158,10 +152,11 @@
         <label class="mdl-textfield__label" for="quantity">- Quantity</label>
       </div>
       <br/>
-        </form>
-    </div><!--/.form-section-->
-    <button class="sign-in-btn mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--raised mdl-button--colored" (click)="addProduct">
-      Add to stock
-    </button><!--/button-->
- </div><!--/.signin-->
+    </form>
+  </div><!--/.form-section-->
+  <button class="sign-in-btn mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--raised mdl-button--colored" (click)="addProduct()">
+    Add to stock
+  </button><!--/button-->
+</div><!--/.signin-->
 </body>
+</html>
