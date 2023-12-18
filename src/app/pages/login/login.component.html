@@ -14,14 +14,14 @@
         <form (submit)="login()">
           <!-- Email -->
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="username" id="sample3" name="username" [(ngModel)]="loginObj.username">
-            <label class="mdl-textfield__label" for="sample3">- User Name</label>
+            <input class="mdl-textfield__input" type="text" id="userNameInput" name="username" [(ngModel)]="userName">
+            <label class="mdl-textfield__label" for="sample3">- User name</label>
           </div>
           <br/>
           <br/>
           <!-- Password -->
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input pattern=".{8,}" class="mdl-textfield__input" type="password" id="sample3" name="password" [(ngModel)]="loginObj.password">
+            <input pattern=".{8,}" class="mdl-textfield__input" type="password" id="passwordInput" name="password" [(ngModel)]="password">
             <label class="mdl-textfield__label" for="sample3">- Password</label>
           </div>
           <br/>

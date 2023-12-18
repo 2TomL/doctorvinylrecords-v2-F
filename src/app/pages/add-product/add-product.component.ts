@@ -6,6 +6,8 @@ import { Status } from 'src/app/interface/Status';
 import { vinyl } from 'src/app/interface/vinyl';
 import { HttpClient } from '@angular/common/http';
 import { Track } from 'src/app/interface/Track';
+import { HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-product',
@@ -13,7 +15,8 @@ import { Track } from 'src/app/interface/Track';
   styleUrls: ['./add-product.component.css'],
 })
 export class AddProductComponent {
-  Vinyl: vinyl = {
+  
+  vinyl: vinyl = {
     imageFile: null,
     vinylId: 0,
     artist: '',
@@ -21,7 +24,7 @@ export class AddProductComponent {
     catalogNr: '',
     label: '',
     country: '',
-    category: Category.DEEP_HOUSE,
+    category : Category.DEEP_HOUSE,
     released: 0,
     format: Format.TWELVE_INCH,
     bestSeller: false,
@@ -32,21 +35,37 @@ export class AddProductComponent {
 
   file: File | null = null;
 
-  constructor (private httpClient: HttpClient){
+  constructor (private httpClient: HttpClient, private router: Router){
 
   }
   addFile(event: any) {
     if (event.target.files.length > 0) {
       this.file = event.target.files[0];
+      this.vinyl.imageFile= this.file;
     }
   }
   addProduct() {
-    const url = 'http://localhost:8080//api/vinyl/add'
-      this.httpClient.post(url,  this.Vinyl ).subscribe({
-        next:response => {console.log('Saved okay')},
-        error: (error: HttpErrorResponse) => {console.log(error.error)}
-        })
+    const url = 'http://localhost:8080/api/vinyl/add'
+    const token = localStorage.getItem('token');
+  
+    if (token) {
+
+      console.log(this.vinyl);
+      
+
+      const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+      
+      this.httpClient.post(url, this.vinyl, { headers }).subscribe({
+        next: response => {
+          console.log('Saved okay', response)
+          this.router.navigate(['/add-product']);
+        },
+        error: (error: HttpErrorResponse) => {
+          console.log(error.error);
+        }
+      });
     }
+  }
     // addTrack(): void {
     //   const newTrack: Track = { trackId: '', title: '', videoLink: '' };
     //   this.Vinyl.trackList.push(newTrack);

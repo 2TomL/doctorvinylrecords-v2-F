@@ -27,37 +27,37 @@
             accept="Image/*"
             style="margin-top: 10px"
             (change)="addFile($event)"
-            [(ngModel)]="Vinyl.imageFile"
+            [(ngModel)]="vinyl.imageFile"
           />
         </div>
         <br/>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="artist" id="sample3" name="artist" ngModel="artist">
+          <input class="mdl-textfield__input" type="text" id="sample3" name="artist" [(ngModel)]="vinyl.artist">
           <label class="mdl-textfield__label" for="sample3">- Artist</label>
         </div>
         <br/>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="title" id="sample3" name="title" ngModel="title">
+          <input class="mdl-textfield__input" type="text" id="sample3" name="title" [(ngModel)]="vinyl.title">
           <label class="mdl-textfield__label" for="sample3">- Title</label>
         </div>
         <br/>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="catalogNr" id="sample3" name="catalogNr" ngModel="catalogNr">
+          <input class="mdl-textfield__input" type="text" id="sample3" name="catalogNr" [(ngModel)]="vinyl.catalogNr">
           <label class="mdl-textfield__label" for="sample3">- Cat. Nr</label>
         </div>
         <br/>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="label" id="sample3" name="label" ngModel="label">
+          <input class="mdl-textfield__input" type="text" id="sample3" name="label" [(ngModel)]="vinyl.label">
           <label class="mdl-textfield__label" for="sample3">- Label</label>
         </div>
         <br/>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="country" id="sample3" name="country" ngModel="country">
+          <input class="mdl-textfield__input" type="text" id="sample3" name="country" [(ngModel)]="vinyl.country">
           <label class="mdl-textfield__label" for="sample3">- Country</label>
         </div>
         <br/>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <select id="category" class="mdl-textfield__input" name="category">
+          <select id="category" class="mdl-textfield__input" name="category" [(ngModel)]="vinyl.category">
             <option>Choose Category</option>
             <option value="HOUSE">House</option>
             <option value="DEEP_HOUSE">Deep House</option>
@@ -84,7 +84,7 @@
         </div>
         <br/>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="released" id="sample3" name="released" ngModel="released">
+          <input class="mdl-textfield__input" type="released" id="sample3" name="released"  [(ngModel)]="vinyl.released">
           <label class="mdl-textfield__label" for="sample3">- Released</label>
         </div>
         <br/>
@@ -104,7 +104,7 @@
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="bestSeller">
               <span class="mdl-switch__label">Best Seller -</span>
-              <input type="checkbox" id="bestSeller" class="mdl-switch__input" name="bestSeller" ngModel="bestSeller">
+              <input type="checkbox" id="bestSeller" class="mdl-switch__input" name="bestSeller" [(ngModel)]="vinyl.bestSeller">
             </label>
           </div>
           <br/>
@@ -122,7 +122,7 @@
           </div>
           <br/> -->
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="price" id="sample3" name="price" ngModel="price">
+            <input class="mdl-textfield__input" type="price" id="sample3" name="price" [(ngModel)]="vinyl.price">
             <label class="mdl-textfield__label" for="sample3">- Price</label>
           </div>
           <br/>

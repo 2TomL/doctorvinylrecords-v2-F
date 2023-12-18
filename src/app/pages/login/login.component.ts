@@ -1,30 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit{
-  registerUsers: any[] = [];
-  registerObj: any={
-    userName:'',
-    email:'',
-    password:''
-  };
-  
-  loginObj: any = {
-    userName:'',
-    password:''
+export class LoginComponent{
+  userName: string = '';
+  password: string = '';
+  constructor(private httpClient: HttpClient, private router: Router){
+
   }
 
-  password = "";
-  userName= "";
-  constructor (private httpClient: HttpClient){}
-    ngOnInit(): void {
-
-    }
     login() {
      
       const url = 'http://localhost:8080/api/auth/login'
@@ -38,7 +27,15 @@ export class LoginComponent implements OnInit{
     
         // Make a POST request to the register endpoint
         this.httpClient.post(url, loginRequest ).subscribe({
-          next:response => {console.log('Registration okay', response)},
+          next:(response:any) => {
+            const token = response.token
+            const role = response.roles
+            localStorage.setItem("token", token)  
+            localStorage.setItem("role", role) 
+                  
+            console.log('Login okay', response)
+            this.router.navigate(['/vinyl'])
+              },
           error: (error: HttpErrorResponse) => {console.log(error.error)}
           })
           

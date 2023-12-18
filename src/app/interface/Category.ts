@@ -1,6 +1,6 @@
 export enum Category {
     // Define the possible values for the Category enum
-    DEEP_HOUSE = 'Deep House',
+    DEEP_HOUSE = 'DEEP_HOUSE',
     TECH_HOUSE = 'Tech House',
     PROGRESSIVE_HOUSE = 'Progressive House',
     ELECTRO_HOUSE = 'Electro House',

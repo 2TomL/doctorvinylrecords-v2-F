@@ -11,6 +11,7 @@ import { GearComponent } from './pages/gear/gear.component';
 import { AccessoriesComponent } from './pages/accessories/accessories.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { AddProductComponent } from './pages/add-product/add-product.component';
+import { authGuard } from './security/auth.guard';
 
 const routes: Routes = [
   {
@@ -55,7 +56,7 @@ const routes: Routes = [
   },
   {
     path: 'add-product',
-    component: AddProductComponent,
+    component: AddProductComponent,canActivate: [authGuard], data: { allowedRoles: ['ROLE_ADMIN'] }
   },
   {
     path: '**',

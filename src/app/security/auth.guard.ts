@@ -3,14 +3,18 @@ import { CanActivateFn, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Ro
 
 // Function to get user role
 function getUserRole(): string {
-  const roles = JSON.parse(localStorage.getItem('roles') || '[]');
-  return roles[0]; // Assuming the roles are stored as an array of strings
+  const roles = localStorage.getItem('role') || '[]';
+
+  console.log(roles);
+  
+  
+  return roles; // Assuming the roles are stored as an array of strings
 }
 
 export const authGuard: CanActivateFn = (route: ActivatedRouteSnapshot, state: RouterStateSnapshot) => {
   const router = inject(Router)
 
-  const allowedRoles = route.data['allowedRoles'] as Array<string>;
+  const allowedRoles = route.data['allowedRoles'] as string;
 
   // Special handling for login page
   if (route.routeConfig && (route.routeConfig.path === '' || route.routeConfig.path === 'registration' || route.routeConfig.path === 'login')) {
@@ -35,7 +39,7 @@ export const authGuard: CanActivateFn = (route: ActivatedRouteSnapshot, state: R
     return true;
   } else {
     // Navigate to a default route if the user doesn't have the necessary permissions
-    router.navigate(['']);
+    router.navigate(['/']);
     return false;
   }
 };
