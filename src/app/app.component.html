@@ -85,9 +85,7 @@
                 <a class="dropdown-item" href="#" routerLink="gear">DJ-Gear</a>
               </li>
               <li>
-                <a class="dropdown-item" href="#" routerLink="accessories"
-                  >Accessories</a
-                >
+                <a class="dropdown-item" href="#" routerLink="accessories">Accessories</a>
               </li>
             </ul>
           </li>
@@ -119,9 +117,7 @@
               role="button"
               data-bs-toggle="dropdown"
               aria-expanded="false"
-            >
-              Login/Register
-            </a>
+            >Login/Register</a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item" routerLink="/login">Login</a></li>
               <li>
@@ -170,22 +166,22 @@
                 </div>
                 <div class="row pt-1" *ngFor="let cart of cartProducts">
                   <div class="col-4">
-                    <!-- <img
+                    <img
                       class="img-fluid"
                       style="height: 30px; border-radius: 50%"
-                      [src]="cart.productImageUrl"
+                      [src]=""
                       class="card-img-top"
-                    /> -->
+                    />
                   </div>
-                  <!-- <div class="col-3">
-                    {{ cart.productName }}
+                  <div class="col-3">
+                    {{ cart }}
                   </div>
                   <div class="col-2">
-                    {{ cart.quantity + 1 }}
+                    {{ cart + 1 }}
                   </div>
                   <div class="col-2 text-end">
-                    {{ cart.productPrice }}
-                  </div> -->
+                    {{ cart }}
+                  </div>
                 </div>
 
                 <div class="row">

@@ -8,20 +8,20 @@ import { Observable, Subject} from 'rxjs';
 export class ProductService {
   public cartAddedSubject = new Subject<boolean>();
   constructor(private http: HttpClient) { }
-  getAllProducts(): Observable<any[]> {
+  getAllVinyl(): Observable<any[]> {
     debugger;
-    return this.http.get<any[]>("");
+    return this.http.get<any[]>("http://localhost:8080/api/vinyl/getvinyls");
   }
   addToCart(obj: any) : Observable<any> {
     debugger;
-    return this.http.post<any>("",obj);
+    return this.http.post<any>("http://localhost:8080/api/cart/add",obj);
   }
 
   getCartItemsByCustId(custId: number) : Observable<any[]>  {
-    return this.http.get<any[]>("" + custId);
+    return this.http.get<any[]>("http://localhost:8080/api/cart/remove/" + custId);
   }
    removeCartItemById(cartId: number) : Observable<any[]>  {
-    return this.http.get<any[]>("" + cartId);
+    return this.http.get<any[]>("http://localhost:8080/api/sale/make" + cartId);
   }
 
   makeSale(obj: any) : Observable<any> {

@@ -29,7 +29,7 @@ clearCart(): void {
   this.cartProducts = [];
 }
 fetchProductData(productId: number): Observable<any> {
-  const url = `http://example.com/api/products/${productId}`;
+  const url = `http://localhost:8080/api/vinyl/${productId}`;
   return this.http.get(url);
 }
 }

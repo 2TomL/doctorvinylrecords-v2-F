@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit{
 
   loadAllProducts() {
     debugger;
-    this.productService.getAllProducts().subscribe((result: any)=>{
+    this.productService.getAllVinyl().subscribe((result: any)=>{
       this.productList = result.data;
     })
   }
