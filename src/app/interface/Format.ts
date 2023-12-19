@@ -1,5 +1,4 @@
 export enum Format {
-    // Define the possible values for the Format enum
     LP = 'LP',
     MAXI = 'MAXI',
     SEVEN_INCH = 'SEVEN_INCH',

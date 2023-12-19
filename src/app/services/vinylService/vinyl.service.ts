@@ -21,13 +21,13 @@ export class VinylService {
   private getConfig(): any {
     return {
       headers: {
-        Authorization: 'Bearer ' + this.getToken(),
+        Authorization: 'Bearer' + this.getToken(),
       },
     };
   }
 
   async getAllVinyls(): Promise<any> {
-    const url = 'http://localhost:8080/api/vinyl/getvinyls';
+    const url = 'http://localhost:8080/api/vinyl/getVinyls';
 
     try {
       if (!this.getToken()) {

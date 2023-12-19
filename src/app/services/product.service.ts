@@ -10,7 +10,7 @@ export class ProductService {
   constructor(private http: HttpClient) { }
   getAllVinyl(): Observable<any[]> {
     debugger;
-    return this.http.get<any[]>("http://localhost:8080/api/vinyl/getvinyls");
+    return this.http.get<any[]>("http://localhost:8080/api/vinyl/getVinyls");
   }
   addToCart(obj: any) : Observable<any> {
     debugger;
@@ -18,14 +18,14 @@ export class ProductService {
   }
 
   getCartItemsByCustId(custId: number) : Observable<any[]>  {
-    return this.http.get<any[]>("http://localhost:8080/api/cart/remove/" + custId);
+    return this.http.get<any[]>("" + custId);
   }
    removeCartItemById(cartId: number) : Observable<any[]>  {
-    return this.http.get<any[]>("http://localhost:8080/api/sale/make" + cartId);
+    return this.http.get<any[]>("http://localhost:8080/api/cart/remove" + cartId);
   }
 
   makeSale(obj: any) : Observable<any> {
     debugger;
-    return this.http.post<any>("",obj);
+    return this.http.post<any>("http://localhost:8080/api/sale/make",obj);
   }
 }
