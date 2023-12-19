@@ -28,4 +28,9 @@ export class ProductService {
     debugger;
     return this.http.post<any>("http://localhost:8080/api/sale/make",obj);
   }
+  addimage(formData: FormData): Observable<any> {
+    const url = `http://localhost:8080/admin/addimage`;
+ 
+    return this.http.post(url, formData, {});
+  }
 }

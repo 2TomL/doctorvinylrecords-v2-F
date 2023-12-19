@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
 import { Track } from 'src/app/interface/Track';
 import { HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-add-product',
@@ -35,7 +36,7 @@ export class AddProductComponent {
 
   file: File | null = null;
 
-  constructor (private httpClient: HttpClient, private router: Router){
+  constructor (private httpClient: HttpClient, private router: Router, private productService: ProductService){
 
   }
   addFile(event: any) {
@@ -44,6 +45,7 @@ export class AddProductComponent {
       this.vinyl.imageFile= this.file;
     }
   }
+
   addProduct() {
     const url = 'http://localhost:8080/api/vinyl/add'
     const token = localStorage.getItem('token');
@@ -64,6 +66,36 @@ export class AddProductComponent {
           console.log(error.error);
         }
       });
+
+    const img: FormData = new FormData();
+    this.vinyl.imageFile = this.vinyl.vinylId + '.png';
+    img.append('file', this.vinyl.imageFile, this.vinyl.imageFile);
+ 
+    this.productService.addimage(img).subscribe({
+      next: (response: string): void => {
+        // console.log(response);
+      },
+      error: (error): void => {
+        console.error('error', error);
+      },
+    });
+
+      this.vinyl = {
+        imageFile: null,
+        vinylId: 0,
+        artist: '',
+        title: '',
+        catalogNr: '',
+        label: '',
+        country: '',
+        category : Category.DEEP_HOUSE,
+        released: 0,
+        format: Format.TWELVE_INCH,
+        bestSeller: false,
+        trackList: [],
+        price: 0,
+        status: Status.IN_STOCK,
+      };
     }
   }
     // addTrack(): void {

@@ -28,13 +28,15 @@ export class HomeComponent implements OnInit{
   loadAllProducts() {
     debugger;
     this.productService.getAllVinyl().subscribe((result: any)=>{
-      this.productList = result.data;
+      this.productList = result;
     })
+    console.log(this.productList);
+    
   }
 
   addItemToCart(productId: number) {
     debugger;
-    this.cartObj.ProductId = productId;
+    this.cartObj.vinylId = productId;
     this.productService.addToCart(this.cartObj).subscribe((result: any)=>{
        if(result.result) {
         alert("Product Added To Cart");

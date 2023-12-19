@@ -38,7 +38,9 @@
               home
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Vinyl</a></li>
+              <li>
+                <a class="dropdown-item" href="#" routerLink="products">Vinyl</a>
+              </li>
               <li>
                 <a class="dropdown-item" href="#" routerLink="gear">Gear</a>
               </li>
@@ -46,9 +48,7 @@
                 <a class="dropdown-item" href="#" routerLink="about">About</a>
               </li>
               <li>
-                <a class="dropdown-item" href="#" routerLink="contact"
-                  >Contact</a
-                >
+                <a class="dropdown-item" href="#" routerLink="contact">Contact</a>
               </li>
             </ul>
           </li>
@@ -85,7 +85,9 @@
                 <a class="dropdown-item" href="#" routerLink="gear">DJ-Gear</a>
               </li>
               <li>
-                <a class="dropdown-item" href="#" routerLink="accessories">Accessories</a>
+                <a class="dropdown-item" href="#" routerLink="accessories"
+                  >Accessories</a
+                >
               </li>
             </ul>
           </li>
@@ -117,7 +119,8 @@
               role="button"
               data-bs-toggle="dropdown"
               aria-expanded="false"
-            >Login/Register</a>
+              >Login/Register</a
+            >
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item" routerLink="/login">Login</a></li>
               <li>
@@ -126,14 +129,21 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link fw-semibold text-uppercase text-black me-1"
-              routerLink="contact">Contact</a>
+            <a
+              class="nav-link fw-semibold text-uppercase text-black me-1"
+              routerLink="contact"
+              >Contact</a
+            >
           </li>
           <li class="nav-item">
-            <form action="" method="get" style="display: flex; height: 1.8rem;" >
-              <input type="text"  placeholder="Search Vinyl..." />
+            <form action="" method="get" style="display: flex; height: 1.8rem">
+              <input type="text" placeholder="Search Vinyl..." />
               <a class="nav-link" href="#" enter>
-                <i class="fa fa-search fs-5" style="color: #202122" onclick="search"></i>
+                <i
+                  class="fa fa-search fs-5"
+                  style="color: #202122"
+                  onclick="search"
+                ></i>
               </a>
             </form>
           </li>
@@ -146,7 +156,7 @@
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              <i class="fa fa-shopping-basket fs-5" style="color: #202122" ></i>
+              <i class="fa fa-shopping-basket fs-5" style="color: #202122"></i>
               <span
                 class="position-absolute translate-middle badge rounded-pill bg-NOT-Danger"
               >
@@ -158,7 +168,7 @@
               <div class="CartContainer">
                 <div class="row">
                   <div class="col-6">
-                    <a class="btn" routerLink="/cart" style="cursor: pointer;">
+                    <a class="btn" routerLink="/cart" style="cursor: pointer">
                       Cart
                     </a>
                   </div>
