@@ -20,15 +20,16 @@
       <form action="#">
         <!-- Add picture -->
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <label for="">Image - </label>
-          <input
-            type="file"
-            name="img"
-            accept="Image/*"
-            style="margin-top: 10px"
-            (change)="addFile($event)"
-            [(ngModel)]="vinyl.imageFile"
-          />
+          <div>
+            <label for="">Add image -</label>
+            <input
+              type="file"
+              name="img"
+              accept="Image/*"
+              style="margin-top: 10px"
+              (change)="addFile($event)"
+            />
+          </div>
         </div>
         <br/>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -150,6 +151,11 @@
           <option value="10">10</option>
         </select>
         <label class="mdl-textfield__label" for="quantity">- Quantity</label>
+      </div>
+      <br/>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type="text" id="sample3" name="ytLink" [(ngModel)]="vinyl.ytLink">
+        <label class="mdl-textfield__label" for="sample3">- Youtube link</label>
       </div>
       <br/>
     </form>

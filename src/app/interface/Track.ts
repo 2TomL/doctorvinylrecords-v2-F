@@ -1,6 +1,6 @@
 export interface Track {
     trackId: number;
     title: string;
-    duration: number; // or string, depending on your backend model
+    duration: number; // or string, depending on backend
     videoLink: string;
 }

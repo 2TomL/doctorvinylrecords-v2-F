@@ -18,4 +18,5 @@ export interface vinyl {
     trackList: Track[];
     price: number;
     status: Status;
+    ytLink: string;
 }

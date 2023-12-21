@@ -36,8 +36,9 @@
               <div class="card">
                 <img
                   class="img-fluid"
-                  style="height: 200px"
-                  [src]="product.imageFile"
+                  style="height: 300px"
+                  style="width: 300px"
+                  src="assets\KH-dance4.jpg"
                   class="card-img-top"
                   alt="..."
                 />
@@ -47,8 +48,8 @@
                     <span class="text-danger fw-semibold me-2"
                       >${{ product.price }}</span
                     >
-                    <del> ${{ product.price }}</del>
-                    <span class="text-success ms-2">35% Off</span>
+                    <!-- <del> ${{ product.price }}</del>
+                    <span class="text-success ms-2">35% Off</span> -->
                   </p>
                   <p>Artist: {{ product.artist }}</p>
                   <p>Title: {{ product.title }}</p>
@@ -68,12 +69,19 @@
                       <span class="text-muted">(...)</span>
                     </div>
                     <div class="col-6 text-end">
+                      <div class="logo-bar">
+                      <div class="yt">
+                        <a href="{{ product.ytLink }}" target="_blank">
+                      <img class="btn logo-box" src="./assets/yt.png">
+                    </a>  
+                    </div>
                       <button
                         class="btn btn-sm btn-success"
                         (click)="addItemToCart(product.vinylId)"
                       >
                         Add To Cart
                       </button>
+                    </div>
                     </div>
                   </div>
                 </div>

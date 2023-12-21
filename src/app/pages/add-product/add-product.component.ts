@@ -25,6 +25,7 @@ export class AddProductComponent {
     catalogNr: '',
     label: '',
     country: '',
+    ytLink:'',
     category : Category.DEEP_HOUSE,
     released: 0,
     format: Format.TWELVE_INCH,
@@ -34,19 +35,23 @@ export class AddProductComponent {
     status: Status.IN_STOCK,
   };
 
-  file: File | null = null;
+  //file: File | null = null;
 
   constructor (private httpClient: HttpClient, private router: Router, private productService: ProductService){
 
   }
+
+  file: File = new File([], '');
   addFile(event: any) {
     if (event.target.files.length > 0) {
       this.file = event.target.files[0];
-      this.vinyl.imageFile= this.file;
+      
     }
   }
+  
 
   addProduct() {
+    this.addimageTodb()
     const url = 'http://localhost:8080/api/vinyl/add'
     const token = localStorage.getItem('token');
   
@@ -66,19 +71,7 @@ export class AddProductComponent {
           console.log(error.error);
         }
       });
-
-    const img: FormData = new FormData();
-    this.vinyl.imageFile = this.vinyl.vinylId + '.png';
-    img.append('file', this.vinyl.imageFile, this.vinyl.imageFile);
- 
-    this.productService.addimage(img).subscribe({
-      next: (response: string): void => {
-        // console.log(response);
-      },
-      error: (error): void => {
-        console.error('error', error);
-      },
-    });
+      
 
       this.vinyl = {
         imageFile: null,
@@ -88,6 +81,7 @@ export class AddProductComponent {
         catalogNr: '',
         label: '',
         country: '',
+        ytLink:'',
         category : Category.DEEP_HOUSE,
         released: 0,
         format: Format.TWELVE_INCH,
@@ -98,6 +92,19 @@ export class AddProductComponent {
       };
     }
   }
+  addimageTodb() {
+    const img: FormData = new FormData();
+          this.vinyl.imageFile = this.vinyl.vinylId + '.png';
+          img.append('file', this.file, this.vinyl.imageFile);
+    const url = 'http://localhost:8080/api/vinyl/addimage'
+    const token = localStorage.getItem('token');  
+    
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+ 
+    this.httpClient.post(url, img, {headers: headers, responseType: 'text' });
+  }
+    
+  }
     // addTrack(): void {
     //   const newTrack: Track = { trackId: '', title: '', videoLink: '' };
     //   this.Vinyl.trackList.push(newTrack);
@@ -105,4 +112,3 @@ export class AddProductComponent {
     // removeTrack(index: number) {
     //   this.Vinyl.trackList.splice(index, 1);
     // }
-}
